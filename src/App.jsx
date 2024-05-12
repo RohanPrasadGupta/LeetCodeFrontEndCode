@@ -2,8 +2,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import AppLayout from "./ui/AppLayout";
-import JavascriptSolution from "./pages/JavascriptSolution";
-import PythonSolution from "./pages/PythonSolution";
 import Home from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
 import "./App.css";
@@ -26,8 +24,6 @@ function App() {
             <Route element={<Home />} />
             <Route index element={<Navigate replace to="home" />} />
             <Route path="home" element={<Home />} />
-            <Route path="javascript" element={<JavascriptSolution />} />
-            <Route path="python" element={<PythonSolution />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </AppLayout>

@@ -9,6 +9,7 @@ import SolutionLevel from "../ui/SolutionLevel";
 import CodeBody from "./CodeBody";
 import LoadingPage from "../pages/LoadingPage";
 import Header from "../componnets/Header";
+import Footer from "../componnets/Footer";
 
 function Home() {
   const [solutions, setSoulutions] = useState([]);
@@ -74,6 +75,7 @@ function Home() {
           <SearchBox setSearchQuestion={setSearchQuestion} />
 
           <CodeBody solutions={searchedSolution} />
+          <Footer />
         </>
       )}
     </>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const QuestionMain = styled.div`
   cursor: pointer;
