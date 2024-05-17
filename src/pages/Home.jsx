@@ -1,4 +1,4 @@
-import { getAllData } from "../services/readData";
+// import { getAllData } from "../services/readData";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import SearchBox from "../componnets/SearchBox";
@@ -10,27 +10,20 @@ import CodeBody from "./CodeBody";
 import LoadingPage from "../pages/LoadingPage";
 import Header from "../componnets/Header";
 import Footer from "../componnets/Footer";
+// import { useMutation } from "@tanstack/react-query";
+
+import useSolutions from "../services/useData";
 
 function Home() {
   const [solutions, setSoulutions] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { isLoading, response } = useSolutions();
   const [searchQuestion, setSearchQuestion] = useState("");
 
-  // console.log(searchQuestion);
-
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const result = await getAllData();
-        setSoulutions(result);
-        setLoading(false);
-      } catch (error) {
-        console.log("Error to fetch,", error);
-      }
-    };
-    fetchData();
-  }, [setLoading]);
+    if (response) {
+      setSoulutions(response);
+    }
+  }, [response]);
 
   const easySolution = solutions.reduce(
     (prev, solution) => prev + (solution.Level === "Easy" ? 1 : 0),
@@ -53,10 +46,11 @@ function Home() {
           `${solution.Title}`.toLowerCase().includes(searchQuestion)
         )
       : solutions;
+
   return (
     <>
-      {loading && <LoadingPage />}
-      {!loading && (
+      {isLoading && <LoadingPage />}
+      {!isLoading && (
         <>
           <Header />
           <SolutionLevel>
