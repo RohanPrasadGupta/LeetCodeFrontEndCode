@@ -13,6 +13,12 @@ const SocialMain = styled.div`
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 `;
 
+const SocialDesign = styled.div`
+  display: flex;
+  gap: 20px;
+  align-items: center;
+`;
+
 function SocialMedia() {
   return (
     <SocialMain>
@@ -27,7 +33,9 @@ function SocialMedia() {
           target="_blank"
           style={{ textDecoration: "none", color: "blue" }}
         >
-          <FaLinkedin /> LinkedIn
+          <SocialDesign>
+            <FaLinkedin /> LinkedIn
+          </SocialDesign>
         </Link>
       </motion.div>
       <motion.div
@@ -41,7 +49,9 @@ function SocialMedia() {
           target="_blank"
           style={{ textDecoration: "none", color: "black" }}
         >
-          <FaGithub /> GitHub
+          <SocialDesign>
+            <FaGithub /> GitHub
+          </SocialDesign>
         </Link>
       </motion.div>
     </SocialMain>
