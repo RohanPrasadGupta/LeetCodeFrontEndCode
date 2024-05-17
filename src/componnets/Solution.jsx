@@ -35,7 +35,7 @@ function Solution({ title, level, type, code }) {
           <QuestionDetails>
             <span
               style={{
-                color: type === "Python" ? "#EEFC23" : "#eeff32",
+                color: type.toLowerCase() === "python" ? "#EEFC23" : "#b6c602",
               }}
             >
               {type}
