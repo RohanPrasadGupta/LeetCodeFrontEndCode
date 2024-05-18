@@ -4,8 +4,8 @@ const FooterWrapper = styled.footer`
   background-color: #282c34;
   padding: 20px;
   text-align: center;
-  bottom: 0;
   width: 100%;
+  position: relative;
 `;
 
 const FooterText = styled.h3`

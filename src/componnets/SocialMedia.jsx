@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
+import { TbBrandLeetcode } from "react-icons/tb";
 import styled from "styled-components";
 
 const SocialMain = styled.div`
@@ -38,6 +39,7 @@ function SocialMedia() {
           </SocialDesign>
         </Link>
       </motion.div>
+
       <motion.div
         className="box"
         whileHover={{ scale: 1.2 }}
@@ -51,6 +53,23 @@ function SocialMedia() {
         >
           <SocialDesign>
             <FaGithub /> GitHub
+          </SocialDesign>
+        </Link>
+      </motion.div>
+
+      <motion.div
+        className="box"
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
+        <Link
+          to="https://leetcode.com/rohg505/"
+          target="_blank"
+          style={{ textDecoration: "none", color: "Orange" }}
+        >
+          <SocialDesign>
+            <TbBrandLeetcode /> LeetCode
           </SocialDesign>
         </Link>
       </motion.div>
