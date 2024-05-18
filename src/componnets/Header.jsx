@@ -17,6 +17,7 @@ const HeaderContainer = styled.div`
 
 const ContentContainer = styled.div`
   flex: 1;
+  font-size: 30px;
 `;
 
 const ImageFormat = styled.img`
@@ -109,13 +110,13 @@ function Header() {
     <HeaderFormat>
       <HeaderContainer>
         <ContentContainer>
-          <h2>
+          <p>
             Hi! I am <motion.span className="inline">{displayText}</motion.span>
-          </h2>
-          <h2>
+          </p>
+          <p>
             🚀 Welcome to my
             <motion.span className="inline">{displayTextSolution}</motion.span>
-          </h2>
+          </p>
         </ContentContainer>
         <SocialMedia />
 
